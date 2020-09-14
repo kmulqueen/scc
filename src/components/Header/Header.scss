@@ -1,0 +1,34 @@
+.header {
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}
+
+.logo {
+    width: 7rem;
+    height: 7rem;
+}
+
+.nav {
+    &__list {
+        display: flex;
+        list-style: none;
+
+        :not(:last-child) {
+            margin-right: 1em;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:focus,
+        &:visited {
+            text-decoration: none;
+        }
+    }
+}

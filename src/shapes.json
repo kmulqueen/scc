@@ -1,0 +1,17 @@
+[{
+        "name": "Single Strokes",
+        "sticking": "RLRL"
+    },
+    {
+        "name": "Double Strokes",
+        "sticking": "RRLL"
+    },
+    {
+        "name": "Paradiddle",
+        "sticking": "RLRR"
+    },
+    {
+        "name": "Quad Stroke",
+        "sticking": "RRRR"
+    }
+]

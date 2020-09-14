@@ -1,0 +1,17 @@
+.exercise {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__number {
+        font-size: 2rem;
+        margin-right: 1em;
+    }
+}
+
+.exercise-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

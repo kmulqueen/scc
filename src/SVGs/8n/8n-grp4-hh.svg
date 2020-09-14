@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: MakeMusic 26.3.1.520 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="328" y="141" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="30" viewBox="328 141 104 30" enable-background="new 328 141 104 30" xml:space="preserve"
+style="position:absolute; top:0; left:0;">
+<font horiz-adv-x="1000">
+<!-- 1.000;pyrs;Maestro -->
+<font-face font-family="'Maestro'" units-per-em="1000" underline-position="-78.000000" underline-thickness="9.000000">
+<font-face-src><font-face-name name="Maestro"/></font-face-src></font-face>
+<missing-glyph horiz-adv-x="0" />
+<glyph unicode="&#xBF;" horiz-adv-x="268.000" d="M0,-155L0,-114L114,0L0,114L0,155L135,21L269,155L269,114L155,0L269,-114L269,-155L135,-21z" />
+</font>
+<font horiz-adv-x="2048">
+<!-- Monotype:Times New Roman Regular (Microsoft) -->
+<font-face font-family="'Times New Roman'" units-per-em="2048" underline-position="-223.000000" underline-thickness="100.000000">
+<font-face-src><font-face-name name="Times New Roman"/></font-face-src></font-face>
+<missing-glyph horiz-adv-x="0" />
+</font>
+
+<g id="Music">
+	<text font-family="'Maestro'" transform="translate(330.776,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#xBF;</text>
+	<line x1="335.649" y1="160.984" x2="335.649" y2="146.677" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(361.313,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#xBF;</text>
+	<line x1="366.186" y1="160.984" x2="366.186" y2="146.677" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(392.063,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#xBF;</text>
+	<line x1="396.936" y1="160.984" x2="396.936" y2="146.677" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(422.599,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#xBF;</text>
+	<line x1="427.472" y1="160.984" x2="427.472" y2="146.677" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<path stroke="none" fill="rgb(0,0,0)" fill-rule="nonzero" d="M335.414,145.396L427.707,145.396L427.707,147.958L335.414,147.958z" />
+</g>
+</svg>

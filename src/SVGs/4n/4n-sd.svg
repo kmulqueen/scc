@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: MakeMusic 26.3.1.520 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="328" y="143" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="28" viewBox="328 143 15 28" enable-background="new 328 143 15 28" xml:space="preserve"
+style="position:absolute; top:0; left:0;">
+<font horiz-adv-x="1000">
+<!-- 1.000;pyrs;Maestro -->
+<font-face font-family="'Maestro'" units-per-em="1000" underline-position="-78.000000" underline-thickness="9.000000">
+<font-face-src><font-face-name name="Maestro"/></font-face-src></font-face>
+<missing-glyph horiz-adv-x="0" />
+<glyph unicode="&#xBF;" horiz-adv-x="268.000" d="M0,-155L0,-114L114,0L0,114L0,155L135,21L269,155L269,114L155,0L269,-114L269,-155L135,-21z" />
+<glyph unicode="&#x153;" horiz-adv-x="319.000" d="M8,-1C15,17 25,34 39,49C52,64 68,78 86,90C104,101 123,110 144,117C165,123 186,126 207,126C228,126 247,123 263,116C279,109 292,99 301,88C310,76 316,62 319,47C321,31 319,14 312,-4C305,-22 295,-39 281,-54C267,-70 251,-84 233,-95C215,-107 196,-116 175,-122C154,-129 133,-132 112,-132C91,-132 72,-128 57,-121C41,-114 28,-105 19,-93C9,-81 3,-67 1,-51C-1,-36 1,-19 8,-1z" />
+</font>
+<font horiz-adv-x="2048">
+<!-- Monotype:Times New Roman Regular (Microsoft) -->
+<font-face font-family="'Times New Roman'" units-per-em="2048" underline-position="-223.000000" underline-thickness="100.000000">
+<font-face-src><font-face-name name="Times New Roman"/></font-face-src></font-face>
+<missing-glyph horiz-adv-x="0" />
+</font>
+
+<g id="Music">
+	<line x1="337.541" y1="162.479" x2="337.541" y2="145.396" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(330.776,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#x153;</text>
+	<line x1="398.827" y1="162.479" x2="398.827" y2="145.396" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(392.063,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#x153;</text>
+	<line x1="460.114" y1="162.479" x2="460.114" y2="145.396" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(453.349,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#x153;</text>
+	<line x1="519.509" y1="160.984" x2="519.509" y2="145.396" fill="none" stroke="rgb(0,0,0)" stroke-width="0.470"/>
+	<text font-family="'Maestro'" transform="translate(514.635,163.333)" font-size="20.500000" fill="rgb(0,0,0)">&#xBF;</text>
+</g>
+</svg>
