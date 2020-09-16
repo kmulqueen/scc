@@ -1924,7 +1924,7 @@
       "section": "Flam Beats",
       "exercise": 25,
       "sticking": "FLLFLLFRCLFRCL",
-      "count": "F+aF+a|Fe+aFe+a",
+      "count": "F+aF+a|FeFaFeFa",
       "class": "sc-flams-mix",
       "measure1": {
         "sticking": "FLLFLL",
@@ -1935,7 +1935,7 @@
       "measure2": {
         "sticking": "FRCLFRCL",
         "grid": "1/16 notes",
-        "count": "Fe+aFe+a",
+        "count": "FeFaFeFa",
         "lead": "R"
       },
       "inverted": false
@@ -3148,6 +3148,666 @@
       "class": "sc-flams-mix",
       "measure1": {
         "sticking": "CRRCRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLLLFRRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 87,
+      "sticking": "CLLFRRCRLFLR",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 88,
+      "sticking": "CLLFRRCLRCLR",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 89,
+      "sticking": "CLLFRRCLRFRL",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRFRL",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 90,
+      "sticking": "CLLFRRCRLRCRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRCRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 91,
+      "sticking": "CLLFRRCRLLFLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLLFLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 92,
+      "sticking": "CLLFRRCLFRCLFR",
+      "count": "F+aF+a|FeFaFeFa",
+      "class": "sc-flams-mix-taps",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLFRCLFR",
+        "grid": "1/16 notes",
+        "count": "FeFaFeFa",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 93,
+      "sticking": "CLLFRRCRLRFLRL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRFLRL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 94,
+      "sticking": "CLLFRRCLRRCLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRCLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 95,
+      "sticking": "CLLFRRCLRLFRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRLFRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 96,
+      "sticking": "CLLFRRCLRRFRLL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRFRLL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 97,
+      "sticking": "CLLFRRCRRLFLLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRRLFLLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 98,
+      "sticking": "CLLFRRCLLLFRRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLLFRR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLLLFRRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 99,
+      "sticking": "CRLFLRCLRCLR",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 100,
+      "sticking": "CRLFLRCLRFRL",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRFRL",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 101,
+      "sticking": "CRLFLRCRLRCRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRCRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 102,
+      "sticking": "CRLFLRCRLLFLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLLFLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 103,
+      "sticking": "CRLFLRCLFRCLFR",
+      "count": "F+aF+a|FeFaFeFa",
+      "class": "sc-flams-mix-taps",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLFRCLFR",
+        "grid": "1/16 notes",
+        "count": "FeFaFeFa",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 104,
+      "sticking": "CRLFLRCRLRFLRL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRFLRL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 105,
+      "sticking": "CRLFLRCLRRCLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRCLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 106,
+      "sticking": "CRLFLRCLRLFRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRLFRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 107,
+      "sticking": "CRLFLRCLRRFRLL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRFRLL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 108,
+      "sticking": "CRLFLRCRRLFLLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRRLFLLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 109,
+      "sticking": "CRLFLRCLLLFRRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CRLFLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLLLFRRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 110,
+      "sticking": "CLRCLRCLRFRL",
+      "count": "F+aF+a|F+aF+a",
+      "class": "sc-flams",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRFRL",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 111,
+      "sticking": "CLRCLRCRLRCRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRCRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 112,
+      "sticking": "CLRCLRCRLLFLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLLFLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 113,
+      "sticking": "CLRCLRCLFRCLFR",
+      "count": "F+aF+a|FeFaFeFa",
+      "class": "sc-flams-mix-taps",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLFRCLFR",
+        "grid": "1/16 notes",
+        "count": "FeFaFeFa",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 114,
+      "sticking": "CLRCLRCRLRFLRL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRLRFLRL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 115,
+      "sticking": "CLRCLRCLRRCLRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRCLRR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 116,
+      "sticking": "CLRCLRCLRLFRLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRLFRLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 117,
+      "sticking": "CLRCLRCLRRFRLL",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CLRRFRLL",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 118,
+      "sticking": "CLRCLRCRRLFLLR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
+        "grid": "1/16 notes",
+        "count": "F+aF+a",
+        "lead": "L"
+      },
+      "measure2": {
+        "sticking": "CRRLFLLR",
+        "grid": "1/16 notes",
+        "count": "Fe+aFe+a",
+        "lead": "L"
+      },
+      "inverted": false
+    },
+    {
+      "section": "Flam Beats",
+      "exercise": 119,
+      "sticking": "CLRCLRCLLLFRRR",
+      "count": "F+aF+a|Fe+aFe+a",
+      "class": "sc-flams-mix",
+      "measure1": {
+        "sticking": "CLRCLR",
         "grid": "1/16 notes",
         "count": "F+aF+a",
         "lead": "L"

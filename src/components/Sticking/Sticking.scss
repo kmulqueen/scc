@@ -3,6 +3,7 @@
     display: flex;
     margin-bottom: 1em;
 
+    // Base Stickings
     &--sc-sbc {
         .measure1 {
             display: grid;
@@ -149,6 +150,260 @@
         .measure2 {
             display: grid;
             grid-template-columns: [m2-gutter-start]4.5rem[m2-gutter-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 6rem[m2n2-end m2n3-start] 3.5rem [m2n3-end m2n4-start] 6rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 5.75rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3.4rem [m2-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-flams-taps-16s-flams-16s {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9.6rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 6.5rem[m1n2-end m1n3-start] 3.75rem [m1n3-end m1n4-start] 6.25rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 6.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3.4rem [m1-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [m2-gutter-start]4.5rem[m2-gutter-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 3.25rem[m2n2-end m2n3-start] 3.25rem [m2n3-end m2n4-start] 6rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.25rem [m2n6-end m2n7-start] 3.25rem [m2n7-end m2n8-start] 3.4rem [m2-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    // Mix Exercises
+    &--sc-mix-sbc-flams-16s-2-4 {
+        .measure1 {
+            display: grid;
+            // grid-template-columns: ;
+        }
+
+        .measure2 {
+            display: grid;
+            // grid-template-columns: ;
+        }
+    }
+
+
+    &--sc-mix-sbc-flams-16s-4-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]7rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.5rem [m1n3-end m1n4-start] 3.5rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 3rem [m1n6-end m1n7-start] 3.25rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]6rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 3.75rem [m2n2-end m2n3-start] 3.75rem [m2n3-end m2n4-start] 7rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3.5rem [m2n8-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-sbc-2-4 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9.8rem[ts-end m1n1-start] 5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 5.75rem [m1n3-end m1n4-start] 5rem [m1n4-end m1n5-start] 3rem [m1n5-end m1n6-start] 3rem [m1n6-end m1-end];
+
+            @for $i from 1 through 6 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]3.5rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 3.3rem [m2n3-end m2n4-start] 4rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3.5rem [m2n8-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-sbc-flams-4-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]6.5rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.3rem [m1n3-end m1n4-start] 4rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 3.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]6rem[ts-end m2n1-start] 4.75rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 6rem [m2n3-end m2n4-start] 5.25rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2-end];
+
+            @for $i from 1 through 6 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-sbc-flams-taps-16s-4-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]6.5rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.3rem [m1n3-end m1n4-start] 4rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 3.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]5.5rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 6.75rem [m2n2-end m2n3-start] 4rem [m2n3-end m2n4-start] 6rem [m2n4-end m2n5-start] 4rem [m2n5-end m2n6-start] 6.5rem [m2n6-end m2n7-start] 3.75rem [m2n7-end m2n8-start] 3rem [m2n8-end m2-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-16s-sbc-2-4 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9.6rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.5rem [m1n3-end m1n4-start] 6rem [m1n4-end m1n5-start] 3.75rem [m1n5-end m1n6-start] 3.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]3.5rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 3.5rem [m2n3-end m2n4-start] 4rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3rem [m2n8-end m2-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-16s-flams-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9.6rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.5rem [m1n3-end m1n4-start] 6rem [m1n4-end m1n5-start] 3.75rem [m1n5-end m1n6-start] 3.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]4.5rem[ts-end m2n1-start] 4.5rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 5.5rem [m2n3-end m2n4-start] 4.25rem [m2n4-end m2n5-start] 3.75rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2-end];
+
+            @for $i from 1 through 6 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-16s-flams-taps-16s-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 3.5rem [m1n2-end m1n3-start] 3.5rem [m1n3-end m1n4-start] 5rem [m1n4-end m1n5-start] 3.75rem [m1n5-end m1n6-start] 3.5rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]3.5rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 5rem [m2n2-end m2n3-start] 3.5rem [m2n3-end m2n4-start] 5.5rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 5.25rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3.5rem [m2n8-end m2-end];
+
+            @for $i from 1 through 8 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-taps-16s-flams-2 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9rem[ts-end m1n1-start] 3.5rem [m1n1-end m1n2-start] 6rem [m1n2-end m1n3-start] 3.5rem [m1n3-end m1n4-start] 5.5rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 6rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]3.5rem[ts-end m2n1-start] 4.5rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 4.5rem [m2n3-end m2n4-start] 4rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 5.25rem [m2n6-end m2-end];
+
+            @for $i from 1 through 6 {
+                .m2n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+    }
+
+    &--sc-mix-flams-taps-16s-sbc-2-4 {
+        .measure1 {
+            display: grid;
+            grid-template-columns: [ts-start]9.6rem[ts-end m1n1-start] 4rem [m1n1-end m1n2-start] 6rem [m1n2-end m1n3-start] 4rem [m1n3-end m1n4-start] 6rem [m1n4-end m1n5-start] 3.5rem [m1n5-end m1n6-start] 6.25rem [m1n6-end m1n7-start] 3.5rem [m1n7-end m1n8-start] 3rem [m1n8-end];
+
+            @for $i from 1 through 8 {
+                .m1n#{$i} {
+                    grid-column: #{$i+1} / #{$i+2};
+                }
+            }
+        }
+
+        .measure2 {
+            display: grid;
+            grid-template-columns: [ts-start]3.5rem[ts-end m2n1-start] 3.5rem [m2n1-end m2n2-start] 3.5rem [m2n2-end m2n3-start] 3.5rem [m2n3-end m2n4-start] 4rem [m2n4-end m2n5-start] 3.5rem [m2n5-end m2n6-start] 3.5rem [m2n6-end m2n7-start] 3.5rem [m2n7-end m2n8-start] 3.5rem [m2n8-end m2-end];
 
             @for $i from 1 through 8 {
                 .m2n#{$i} {
