@@ -77,7 +77,10 @@ const StickControlExercise = ({ sticking }) => {
           {sticking.section !== "Mix Exercise" ? (
             <p className="exercise__number">No. {sticking.exercise}</p>
           ) : (
-            <p className="exercise__number">Mix</p>
+            <p className="exercise__number">
+              Mix No. {sticking.measure1.exercise} and{" "}
+              {sticking.measure2.exercise}
+            </p>
           )}
           {sticking.inverted ? <p>Inverted</p> : null}
         </div>

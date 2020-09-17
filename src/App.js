@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import stickings from "./stickings.json";
+import db from "./firebase";
 import "./App.scss";
 
 import Header from "./components/Header";
@@ -7,31 +8,52 @@ import StickControlExercise from "./components/StickControlExercise";
 import Shapes from "./components/Shapes";
 
 function App() {
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const singleBeatCombinations = await db
+  //       .collection("singleBeatCombinations")
+  //       .get();
+  //     singleBeatCombinations.forEach((sticking) => {
+  //       console.log(sticking.id, "==>", sticking.data());
+  //     });
+  //     const flamBeats = await db.collection("flamBeats").get();
+  //     flamBeats.forEach((sticking) => {
+  //       console.log(sticking.id, "==>", sticking.data());
+  //     });
+  //   };
+  //   getData();
+  // }, []);
   const [pattern, setPattern] = useState({});
   const [search, setSearch] = useState("");
   const [section, setSection] = useState("Single Beat Combinations");
   const [mixMeasure1, setMixMeasure1] = useState({
+    exercise: 1,
     sticking: "RLRLRLRL",
     grid: "1/8 notes",
     count: "1+2+3+4+",
     lead: "R",
   });
   const [mixMeasure2, setMixMeasure2] = useState({
-    sticking: "FRRRCLLL",
+    exercise: 1,
+    sticking: "FLLFLL",
     grid: "1/16 notes",
-    count: "Fe+aFe+a",
+    count: "F+aF+a",
     lead: "R",
   });
   const [mixMeasure1Section, setMixMeasure1Section] = useState("Any");
   const [mixMeasure2Section, setMixMeasure2Section] = useState("Any");
+  const [mixMeasureSearch, setMixMeasureSearch] = useState({
+    m1: "",
+    m2: "",
+  });
 
   const startExercise = () => {
     switch (section) {
       case "Single Beat Combinations":
-        setPattern(stickings[0][0]);
+        setPattern(stickings.singleBeatCombinations[0]);
         break;
       case "Flam Beats":
-        setPattern(stickings[1][0]);
+        setPattern(stickings.flamBeats[0]);
         break;
       default:
         return null;
@@ -39,21 +61,26 @@ function App() {
   };
 
   const randomExercise = () => {
-    const allExercises = [...stickings[0], ...stickings[1]];
+    const allExercises = [
+      ...stickings.singleBeatCombinations,
+      ...stickings.flamBeats,
+    ];
     const randomIndex = Math.floor(Math.random() * allExercises.length);
     const randomExercise = allExercises[randomIndex];
     setPattern(randomExercise);
     setSection(randomExercise.section);
   };
   const randomSBCExercise = () => {
-    const randomIndex = Math.floor(Math.random() * stickings[0].length);
-    const randomSticking = stickings[0][randomIndex];
+    const randomIndex = Math.floor(
+      Math.random() * stickings.singleBeatCombinations.length
+    );
+    const randomSticking = stickings.singleBeatCombinations[randomIndex];
     setPattern(randomSticking);
     setSection(randomSticking.section);
   };
   const randomFlamExercise = () => {
-    const randomIndex = Math.floor(Math.random() * stickings[1].length);
-    const randomSticking = stickings[1][randomIndex];
+    const randomIndex = Math.floor(Math.random() * stickings.flamBeats.length);
+    const randomSticking = stickings.flamBeats[randomIndex];
     setPattern(randomSticking);
     setSection(randomSticking.section);
   };
@@ -66,8 +93,12 @@ function App() {
           switch (section) {
             case "Single Beat Combinations":
               if (pattern.exercise !== 1) {
-                setPattern(stickings[0][pattern.exercise - 2]);
-                setSection(stickings[0][pattern.exercise - 2].section);
+                setPattern(
+                  stickings.singleBeatCombinations[pattern.exercise - 2]
+                );
+                setSection(
+                  stickings.singleBeatCombinations[pattern.exercise - 2].section
+                );
               } else {
                 console.log(
                   "This is the 1st exercise, there are no previous exercises."
@@ -76,8 +107,8 @@ function App() {
               break;
             case "Flam Beats":
               if (pattern.exercise !== 1) {
-                setPattern(stickings[1][pattern.exercise - 2]);
-                setSection(stickings[1][pattern.exercise - 2].section);
+                setPattern(stickings.flamBeats[pattern.exercise - 2]);
+                setSection(stickings.flamBeats[pattern.exercise - 2].section);
               } else {
                 console.log(
                   "This is the 1st exercise, there are no previous exercises."
@@ -92,17 +123,22 @@ function App() {
         case "next":
           switch (section) {
             case "Single Beat Combinations":
-              if (pattern.exercise < stickings[0].length) {
-                setPattern(stickings[0][pattern.exercise]);
-                setSection(stickings[0][pattern.exercise].section);
+              if (pattern.exercise < stickings.singleBeatCombinations.length) {
+                setPattern(stickings.singleBeatCombinations[pattern.exercise]);
+                setSection(
+                  stickings.singleBeatCombinations[pattern.exercise].section
+                );
               }
               break;
             case "Flam Beats":
-              if (pattern.exercise < stickings[1].length) {
-                setPattern(stickings[1][pattern.exercise]);
-                setSection(stickings[1][pattern.exercise].section);
+              if (pattern.exercise < stickings.flamBeats.length) {
+                setPattern(stickings.flamBeats[pattern.exercise]);
+                setSection(stickings.flamBeats[pattern.exercise].section);
               } else {
-                console.log("This is the last exercise.", stickings[1].length);
+                console.log(
+                  "This is the last exercise.",
+                  stickings.flamBeats.length
+                );
               }
               break;
 
@@ -215,17 +251,20 @@ function App() {
       // Mixes
       // 2/4
       case "Fe+aFe+a|F+aF+a":
-        console.log(currentPattern.sticking.slice(0, 9));
+        measure1Inverted = currentPattern.sticking.slice(0, 8);
+
       case "FeFaFeFa|F+aF+a":
-        console.log(currentPattern.sticking.slice(9, 15));
+        measure1Inverted = currentPattern.sticking.slice(0, 8);
 
       default:
         break;
     }
+
     const measure2Inverted = currentPattern.sticking.slice(
       measure1Inverted.length,
       sticking.length
     );
+
     currentPattern.measure1.sticking = measure1Inverted;
     currentPattern.measure2.sticking = measure2Inverted;
     currentPattern.inverted = !currentPattern.inverted;
@@ -234,12 +273,18 @@ function App() {
   const handleSearchInput = (e) => {
     switch (section) {
       case "Single Beat Combinations":
-        if (e.target.value > 0 && e.target.value <= stickings[0].length) {
+        if (
+          e.target.value > 0 &&
+          e.target.value <= stickings.singleBeatCombinations.length
+        ) {
           setSearch(e.target.value);
         }
         break;
       case "Flam Beats":
-        if (e.target.value > 0 && e.target.value <= stickings[1].length) {
+        if (
+          e.target.value > 0 &&
+          e.target.value <= stickings.flamBeats.length
+        ) {
           setSearch(e.target.value);
         }
         break;
@@ -252,16 +297,16 @@ function App() {
     e.preventDefault();
     switch (section) {
       case "Single Beat Combinations":
-        if (search > 0 && search <= stickings[0].length) {
-          setPattern(stickings[0][search - 1]);
+        if (search > 0 && search <= stickings.singleBeatCombinations.length) {
+          setPattern(stickings.singleBeatCombinations[search - 1]);
           setSearch("");
         } else {
           return;
         }
         break;
       case "Flam Beats":
-        if (search > 0 && search <= stickings[1].length) {
-          setPattern(stickings[1][search - 1]);
+        if (search > 0 && search <= stickings.flamBeats.length) {
+          setPattern(stickings.flamBeats[search - 1]);
           setSearch("");
         } else {
           return;
@@ -277,12 +322,12 @@ function App() {
     switch (e.target.value) {
       case "Single Beat Combinations":
         if (pattern.section !== e.target.value) {
-          setPattern(stickings[0][0]);
+          setPattern(stickings.singleBeatCombinations[0]);
         }
         break;
       case "Flam Beats":
         if (pattern.section !== e.target.value) {
-          setPattern(stickings[1][0]);
+          setPattern(stickings.flamBeats[0]);
         }
         break;
 
@@ -303,12 +348,313 @@ function App() {
         break;
     }
   };
+  const handleMixSearchInput = (e) => {
+    switch (e.target.name) {
+      case "mix-m1-search":
+        switch (mixMeasure1Section) {
+          case "Single Beat Combinations":
+            if (
+              e.target.value > 0 &&
+              e.target.value <= stickings.singleBeatCombinations.length
+            ) {
+              const newM1 = { ...mixMeasureSearch };
+              newM1.m1 = e.target.value;
+              setMixMeasureSearch(newM1);
+            } else {
+              return;
+            }
+
+            break;
+          case "Flam Beats":
+            if (
+              e.target.value > 0 &&
+              e.target.value <= stickings.flamBeats.length
+            ) {
+              const newM1 = { ...mixMeasureSearch };
+              newM1.m1 = e.target.value;
+              setMixMeasureSearch(newM1);
+            } else {
+              return;
+            }
+            break;
+
+          default:
+            break;
+        }
+        break;
+      case "mix-m2-search":
+        switch (mixMeasure2Section) {
+          case "Single Beat Combinations":
+            if (
+              e.target.value > 0 &&
+              e.target.value <= stickings.singleBeatCombinations.length
+            ) {
+              const newM2 = { ...mixMeasureSearch };
+              newM2.m2 = e.target.value;
+              setMixMeasureSearch(newM2);
+            } else {
+              return;
+            }
+            break;
+          case "Flam Beats":
+            if (
+              e.target.value > 0 &&
+              e.target.value <= stickings.flamBeats.length
+            ) {
+              const newM2 = { ...mixMeasureSearch };
+              newM2.m2 = e.target.value;
+              setMixMeasureSearch(newM2);
+            } else {
+              return;
+            }
+            break;
+
+          default:
+            break;
+        }
+        break;
+      default:
+        break;
+    }
+  };
+  const handleMixSearchClick = (e) => {
+    e.preventDefault();
+    if (mixMeasure1Section === "Any" && mixMeasure2Section === "Any") {
+      const clearSearch = { ...mixMeasureSearch };
+      clearSearch.m1 = "";
+      clearSearch.m2 = "";
+      setMixMeasureSearch(clearSearch);
+      return;
+    }
+
+    const newPattern = {
+      section: "Mix Exercise",
+      inverted: false,
+    };
+
+    switch (mixMeasure1Section) {
+      case "Single Beat Combinations":
+        if (mixMeasureSearch.m1 === "") {
+          const randomIndex = Math.floor(
+            Math.random() * stickings.singleBeatCombinations.length
+          );
+          const m1 = stickings.singleBeatCombinations[randomIndex - 1].measure1;
+
+          setMixMeasure1(m1);
+          newPattern.measure1 = m1;
+        } else {
+          const newM1 =
+            stickings.singleBeatCombinations[mixMeasureSearch.m1 - 1].measure1;
+          setMixMeasure1(newM1);
+          newPattern.measure1 = newM1;
+        }
+        break;
+      case "Flam Beats":
+        if (mixMeasureSearch.m1 === "") {
+          const randomIndex = Math.floor(
+            Math.random() * stickings.flamBeats.length
+          );
+          const m1 = stickings.flamBeats[randomIndex - 1].measure1;
+          setMixMeasure1(m1);
+          newPattern.measure1 = m1;
+        } else {
+          const newM1 = stickings.flamBeats[mixMeasureSearch.m1 - 1].measure1;
+          setMixMeasure1(newM1);
+          newPattern.measure1 = newM1;
+        }
+        break;
+      case "Any":
+        const allStickings = [
+          ...stickings.singleBeatCombinations,
+          ...stickings.flamBeats,
+        ];
+        const randomIndex = Math.floor(Math.random() * allStickings.length);
+        const m1 = allStickings[randomIndex - 1].measure1;
+        setMixMeasure1(m1);
+        newPattern.measure1 = m1;
+        break;
+    }
+
+    switch (mixMeasure2Section) {
+      case "Single Beat Combinations":
+        if (mixMeasureSearch.m2 === "") {
+          const randomIndex = Math.floor(
+            Math.random() * stickings.singleBeatCombinations.length
+          );
+          const m2 = stickings.singleBeatCombinations[randomIndex - 1].measure2;
+          setMixMeasure2(m2);
+          newPattern.measure2 = m2;
+        } else {
+          const newM2 =
+            stickings.singleBeatCombinations[mixMeasureSearch.m2 - 1].measure2;
+          setMixMeasure2(newM2);
+          newPattern.measure2 = newM2;
+        }
+        break;
+      case "Flam Beats":
+        if (mixMeasureSearch.m2 === "") {
+          const randomIndex = Math.floor(
+            Math.random() * stickings.flamBeats.length
+          );
+          const m2 = stickings.flamBeats[randomIndex - 1].measure2;
+          setMixMeasure2(m2);
+          newPattern.measure2 = m2;
+        } else {
+          const newM2 = stickings.flamBeats[mixMeasureSearch.m2 - 1].measure2;
+          setMixMeasure2(newM2);
+          newPattern.measure2 = newM2;
+        }
+        break;
+      case "Any":
+        const allStickings = [
+          ...stickings.singleBeatCombinations,
+          ...stickings.flamBeats,
+        ];
+        const randomIndex = Math.floor(Math.random() * allStickings.length);
+        const m2 = allStickings[randomIndex - 1].measure2;
+        setMixMeasure2(m2);
+        newPattern.measure2 = m2;
+        break;
+      default:
+        break;
+    }
+
+    const sticking = `${newPattern.measure1.sticking}${newPattern.measure2.sticking}`;
+    const count = `${newPattern.measure1.count}|${newPattern.measure2.count}`;
+    newPattern.sticking = sticking;
+    newPattern.count = count;
+    switch (count) {
+      // 4/4 Time
+      case "1+2+3+4+|1+2+3+4+":
+        newPattern.class = "sc-sbc";
+        break;
+      case "1+2+3+4+|F+aF+aF+aF+a":
+        newPattern.class = "sc-mix-sbc-flams-4-4";
+        break;
+      case "1+2+3+4+|Fe+aFe+aFe+aFe+a":
+        newPattern.class = "sc-mix-sbc-flams-16s-4-4";
+        break;
+      case "1+2+3+4+|F+aF+aFeFaFeFa":
+        newPattern.class = "sc-mix-sbc-flams-flams-taps-16s-4-4";
+        break;
+      case "1+2+3+4+|Fe+aFe+aFeFaFeFa":
+        newPattern.class = "sc-mix-sbc-flams-16s-flams-taps-16s-4-4";
+        break;
+      // 2/4 Time
+      case "F+aF+a|F+aF+a":
+        newPattern.class = "sc-flams";
+        break;
+      case "F+aF+a|Fe+aFe+a":
+        newPattern.class = "sc-flams-mix";
+        break;
+      case "F+aF+a|FeFaFeFa":
+        newPattern.class = "sc-flams-mix-taps";
+        break;
+      case "Fe+aFe+a|F+aF+a":
+        newPattern.class = "sc-mix-flams-16s-flams-2";
+        break;
+      case "Fe+aFe+a|Fe+aFe+a":
+        newPattern.class = "sc-flams-16s";
+        break;
+      case "Fe+aFe+a|FeFaFeFa":
+        newPattern.class = "sc-mix-flams-16s-flams-taps-16s-2";
+        break;
+      case "FeFaFeFa|F+aF+a":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-2";
+        break;
+      case "FeFaFeFa|Fe+aFe+a":
+        newPattern.class = "sc-flams-taps-16s-flams-16s";
+        break;
+      case "FeFaFeFa|FeFaFeFa":
+        newPattern.class = "sc-flams-taps-16s";
+        break;
+      // 4/4 + 2/4
+      case "1+2+3+4+|F+aF+a":
+        newPattern.class = "sc-mix-sbc-flams-4-2";
+        break;
+      case "1+2+3+4+|Fe+aFe+a":
+        newPattern.class = "sc-mix-sbc-flams-16s-4-2";
+        break;
+      case "1+2+3+4+|FeFaFeFa":
+        newPattern.class = "sc-mix-sbc-flams-taps-16s-4-2";
+        break;
+      case "F+aF+aF+aF+a|F+aF+a":
+        newPattern.class = "sc-mix-flams-flams-4-2";
+        break;
+      case "F+aF+aF+aF+a|Fe+aFe+a":
+        newPattern.class = "sc-mix-flams-flams-16s-4-2";
+        break;
+      case "F+aF+aF+aF+a|FeFaFeFa":
+        newPattern.class = "sc-mix-flams-flams-taps-16s-4-2";
+        break;
+      case "Fe+aFe+aFe+aFe+a|F+aF+a":
+        newPattern.class = "sc-mix-flams-16s-flams-4-2";
+        break;
+      case "Fe+aFe+aFe+aFe+a|Fe+aFe+a":
+        newPattern.class = "sc-mix-flams-16s-flams-16s-4-2";
+        break;
+      case "Fe+aFe+aFe+aFe+a|FeFaFeFa":
+        newPattern.class = "sc-mix-flams-16s-flams-taps-16s-4-2";
+        break;
+      case "FeFaFeFaFeFaFeFa|F+aF+a":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-4-2";
+        break;
+      case "FeFaFeFaFeFaFeFa|Fe+aFe+a":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-16s-4-2";
+        break;
+      case "FeFaFeFaFeFaFeFa|FeFaFeFa":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-taps-16s-4-2";
+        break;
+      // 2/4 + 4/4
+      case "F+aF+a|1+2+3+4+":
+        newPattern.class = "sc-mix-flams-sbc-2-4";
+        break;
+      case "F+aF+a|F+aF+aF+aF+a":
+        newPattern.class = "sc-mix-flams-flams-2-4";
+        break;
+      case "F+aF+a|Fe+aFe+aFe+aFe+a":
+        newPattern.class = "sc-mix-flams-flams-16s-2-4";
+        break;
+      case "F+aF+a|FeFaFeFaFeFaFeFa":
+        newPattern.class = "sc-mix-flams-flams-taps-16s-2-4";
+        break;
+      case "Fe+aFe+a|1+2+3+4+":
+        newPattern.class = "sc-mix-flams-16s-sbc-2-4";
+        break;
+      case "Fe+aFe+a|F+aF+aF+aF+a":
+        newPattern.class = "sc-mix-flams-16s-flams-2-4";
+        break;
+      case "Fe+aFe+a|Fe+aFe+aFe+aFe+a":
+        newPattern.class = "sc-mix-flams-16s-flams-16s-2-4";
+        break;
+      case "Fe+aFe+a|FeFaFeFaFeFaFeFa":
+        newPattern.class = "sc-mix-flams-16s-flams-taps-16s-2-4";
+        break;
+      case "FeFaFeFa|1+2+3+4+":
+        newPattern.class = "sc-mix-flams-taps-16s-sbc-2-4";
+        break;
+      case "FeFaFeFa|F+aF+aF+aF+a":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-2-4";
+        break;
+      case "FeFaFeFa|Fe+aFe+aFe+aFe+a":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-16s-2-4";
+        break;
+      case "FeFaFeFa|FeFaFeFaFeFaFeFa":
+        newPattern.class = "sc-mix-flams-taps-16s-flams-taps-16s-2-4";
+        break;
+    }
+
+    setPattern(newPattern);
+  };
 
   const mixExerciseMeasure1 = () => {
     const m1Selection = mixMeasure1Section;
-    const allExercises = [...stickings[0], ...stickings[1]];
-    const sbcExercises = stickings[0];
-    const flamExercises = stickings[1];
+    const allExercises = [
+      ...stickings.singleBeatCombinations,
+      ...stickings.flamBeats,
+    ];
+    const sbcExercises = stickings.singleBeatCombinations;
+    const flamExercises = stickings.flamBeats;
     if (m1Selection === "Any") {
       const idx = Math.floor(Math.random() * allExercises.length);
       const measure = allExercises[idx].measure1;
@@ -329,9 +675,12 @@ function App() {
     }
   };
   const mixExerciseMeasure2 = () => {
-    const allExercises = [...stickings[0], ...stickings[1]];
-    const sbcExercises = stickings[0];
-    const flamExercises = stickings[1];
+    const allExercises = [
+      ...stickings.singleBeatCombinations,
+      ...stickings.flamBeats,
+    ];
+    const sbcExercises = stickings.singleBeatCombinations;
+    const flamExercises = stickings.flamBeats;
     const m2Selection = mixMeasure2Section;
     if (m2Selection === "Any") {
       const idx = Math.floor(Math.random() * allExercises.length);
@@ -501,7 +850,7 @@ function App() {
       {!Object.keys(pattern).length ? null : (
         <>
           <StickControlExercise sticking={pattern} />
-          <Shapes />
+          {/* <Shapes /> */}
         </>
       )}
       <div className="container">
@@ -559,6 +908,25 @@ function App() {
             </option>
             <option value="Flam Beats">Flam Beats</option>
           </select>
+          <label htmlFor="search">Measure 1 Exercise # </label>
+          <input
+            type="number"
+            onChange={handleMixSearchInput}
+            name="mix-m1-search"
+            value={mixMeasureSearch.m1}
+            placeholder="Measure 1 Exercise #"
+          />
+          <label htmlFor="search">Measure 2 Exercise # </label>
+          <input
+            type="number"
+            onChange={handleMixSearchInput}
+            name="mix-m2-search"
+            value={mixMeasureSearch.m2}
+            placeholder="Measure 2 Exercise #"
+          />
+          <button type="submit" onClick={handleMixSearchClick}>
+            Apply
+          </button>
           <button onClick={mixExercise}>Mix Exercises</button>
         </form>
       </div>
