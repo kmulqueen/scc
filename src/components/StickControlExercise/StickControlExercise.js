@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./StickControlExercise.scss";
 import Sticking from "../Sticking";
 import { ReactComponent as Notation } from "../../SVGs/eighth-notes.svg";
@@ -69,7 +70,8 @@ import { ReactComponent as MixFlamsTaps16sFlamsTaps16sFlamsTaps16s24 } from "../
 import { ReactComponent as EighthNotesFlams } from "../../SVGs/stick-control/eighth-notes-flams.svg";
 import { ReactComponent as Blank } from "../../SVGs/blank.svg";
 
-const StickControlExercise = ({ sticking }) => {
+const StickControlExercise = () => {
+  const sticking = useSelector((state) => state.stickings.pattern);
   return (
     <div className="container">
       <div className="exercise">
