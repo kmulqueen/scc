@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signIn } from "../../redux/actions/authActions";
 
-const Login = () => {
+const Login = ({ history }) => {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     email: "",
@@ -24,26 +24,29 @@ const Login = () => {
       email: "",
       password: "",
     });
+    // history.push("/exercises");
   };
   return (
     <div className="container login">
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={input.email}
-        onChange={handleInputChange}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={input.password}
-        onChange={handleInputChange}
-      />
-      <button type="submit" onClick={handleLoginSubmit}>
-        Login
-      </button>
+      <form onSubmit={handleLoginSubmit} className="login__form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={input.email}
+          onChange={handleInputChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={input.password}
+          onChange={handleInputChange}
+        />
+        <button type="submit" onClick={handleLoginSubmit}>
+          Login
+        </button>
+      </form>
     </div>
   );
 };

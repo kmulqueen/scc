@@ -1,3 +1,85 @@
+.controls-container {
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3rem repeat(2, 1fr);
+    gap: 2em;
+}
+
 .controls {
-    background-color: seagreen;
+    &__title {
+        padding: 1em;
+        grid-area: title;
+    }
+}
+
+.controls-prev-next {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+        height: 100%;
+        padding: 0 1em
+    }
+}
+
+.controls-random-exercises-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "title title"
+        "b1 b2"
+        "b3 b4";
+
+    gap: 1em;
+
+    button {
+        padding: 1em 2em;
+        height: max-content;
+    }
+}
+
+.controls-mix-sections-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "title title title"
+        "m1section m2section ."
+        "m1exercise m2exercise apply";
+
+    label {
+        font-size: 1.5rem;
+    }
+}
+
+.controls__btn {
+    &--apply-mix {
+        width: max-content;
+        justify-self: center;
+        height: max-content;
+        align-self: center;
+        padding: 1em 4em;
+        grid-area: apply;
+    }
+}
+
+.controls-mix {
+    &-m1-section {
+        grid-area: m1section;
+    }
+
+    &-m2-section {
+        grid-area: m2section;
+    }
+
+    &-m1-exercise {
+        grid-area: m1exercise;
+    }
+
+    &-m2-exercise {
+        grid-area: m2exercise;
+    }
 }

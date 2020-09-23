@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-  startExercise,
   previousExercise,
   nextExercise,
   randomExercise,
@@ -583,113 +582,139 @@ const Controls = () => {
   };
 
   return (
-    <div className="container">
+    <div className="controls-container">
       {/* Basics */}
-      <button
-        onClick={useCallback(() => dispatch(startExercise()), [dispatch])}
-      >
-        Start Exercises
-      </button>
-      <button
-        onClick={useCallback(() => dispatch(previousExercise()), [dispatch])}
-        name="previous"
-      >
-        Previous Exercise
-      </button>
-      <button
-        onClick={useCallback(() => dispatch(nextExercise()), [dispatch])}
-        name="next"
-      >
-        Next Exercise
-      </button>
-      {/* Random Exercises */}
-      <button
-        onClick={useCallback(() => dispatch(randomExercise()), [dispatch])}
-      >
-        Random Exercise
-      </button>
-      <button
-        onClick={useCallback(() => dispatch(randomSBCExercise()), [dispatch])}
-      >
-        Random SBC Exercise
-      </button>
-      <button
-        onClick={useCallback(() => dispatch(randomFlamExercise), [dispatch])}
-      >
-        Random Flam Exercise
-      </button>
+      {/* Start Exercise */}
 
-      <button
-        onClick={useCallback(() => dispatch(invertExercise()), [dispatch])}
-      >
-        Invert Exercise
-      </button>
-      {/* Search Exercises by Number and Section */}
-      <form>
-        <label htmlFor="search">Exercise # </label>
-        <input
-          type="number"
-          onChange={handleSearchInput}
-          name="search"
-          value={search}
-          placeholder="Find by Exercise #"
-        />
-        <button type="submit" onClick={handleSearchClick}>
-          Find
-        </button>
-        <label htmlFor="filter">Filter By:</label>
-        <select name="filter" value={section} onChange={handleSectionSelect}>
-          <option value="Single Beat Combinations">
-            Single Beat Combinations
-          </option>
-          <option value="Flam Beats">Flam Beats</option>
-        </select>
-        {/* Mix Exercises */}
-        <label htmlFor="mix-measure-1">Measure 1 from:</label>
-        <select
-          name="mix-measure-1"
-          value={mixMeasure1Section}
-          onChange={handleMixSectionSelect}
+      {/* Previous / Next */}
+      <div className="controls-prev-next">
+        <button
+          onClick={useCallback(() => dispatch(previousExercise()), [dispatch])}
+          name="previous"
         >
-          <option value="Any">Any</option>
-          <option value="Single Beat Combinations">
-            Single Beat Combinations
-          </option>
-          <option value="Flam Beats">Flam Beats</option>
-        </select>
-        <label htmlFor="mix-measure-2">Measure 2 from:</label>
-        <select
-          name="mix-measure-2"
-          value={mixMeasure2Section}
-          onChange={handleMixSectionSelect}
-        >
-          <option value="Any">Any</option>
-          <option value="Single Beat Combinations">
-            Single Beat Combinations
-          </option>
-          <option value="Flam Beats">Flam Beats</option>
-        </select>
-        <label htmlFor="search">Measure 1 Exercise # </label>
-        <input
-          type="number"
-          onChange={handleMixSearchInput}
-          name="mix-m1-search"
-          value={mixMeasureSearch.m1}
-          placeholder="Measure 1 Exercise #"
-        />
-        <label htmlFor="search">Measure 2 Exercise # </label>
-        <input
-          type="number"
-          onChange={handleMixSearchInput}
-          name="mix-m2-search"
-          value={mixMeasureSearch.m2}
-          placeholder="Measure 2 Exercise #"
-        />
-        <button type="submit" onClick={handleMixSearchClick}>
-          Apply
+          Previous Exercise
         </button>
-        <button onClick={mixExercise}>Mix Exercises</button>
-      </form>
+        <div className="controls-exercise-number-input-container">
+          <label htmlFor="search">Exercise # </label>
+          <input
+            type="number"
+            onChange={handleSearchInput}
+            name="search"
+            value={search}
+            placeholder="Find by Exercise #"
+          />
+          <button type="submit" onClick={handleSearchClick}>
+            Find
+          </button>
+        </div>
+        <div className="controls-exercise-section-input-container">
+          <label htmlFor="filter">Section:</label>
+          <select name="filter" value={section} onChange={handleSectionSelect}>
+            <option value="Single Beat Combinations">
+              Single Beat Combinations
+            </option>
+            <option value="Flam Beats">Flam Beats</option>
+          </select>
+        </div>
+        <button
+          onClick={useCallback(() => dispatch(invertExercise()), [dispatch])}
+        >
+          Invert Exercise
+        </button>
+        <button
+          onClick={useCallback(() => dispatch(nextExercise()), [dispatch])}
+          name="next"
+        >
+          Next Exercise
+        </button>
+      </div>
+
+      {/* Random Exercises */}
+      <div className="controls-random-exercises-container">
+        <h2 className="controls__title">Randomize Exercise</h2>
+        <button
+          onClick={useCallback(() => dispatch(randomExercise()), [dispatch])}
+        >
+          Random Exercise
+        </button>
+        <button
+          onClick={useCallback(() => dispatch(randomSBCExercise()), [dispatch])}
+        >
+          Random SBC Exercise
+        </button>
+        <button
+          onClick={useCallback(() => dispatch(randomFlamExercise()), [
+            dispatch,
+          ])}
+        >
+          Random Flam Exercise
+        </button>
+        <button onClick={mixExercise}>Random Mix Exercise</button>
+      </div>
+      {/* Mix Exercises */}
+      <div className="controls-mix-sections-container">
+        <form className="controls-mix-sections-form">
+          <h2 className="controls__title">Mix Sections</h2>
+
+          {/* Sort Exercises by Section */}
+          <div className="controls-mix-m1-section">
+            <label htmlFor="mix-measure-1">Measure 1 Section:</label>
+            <select
+              name="mix-measure-1"
+              value={mixMeasure1Section}
+              onChange={handleMixSectionSelect}
+            >
+              <option value="Any">Any</option>
+              <option value="Single Beat Combinations">
+                Single Beat Combinations
+              </option>
+              <option value="Flam Beats">Flam Beats</option>
+            </select>
+          </div>
+          <div className="controls-mix-m2-section">
+            <label htmlFor="mix-measure-2">Measure 2 Section:</label>
+            <select
+              name="mix-measure-2"
+              value={mixMeasure2Section}
+              onChange={handleMixSectionSelect}
+            >
+              <option value="Any">Any</option>
+              <option value="Single Beat Combinations">
+                Single Beat Combinations
+              </option>
+              <option value="Flam Beats">Flam Beats</option>
+            </select>
+          </div>
+
+          <div className="controls-mix-m1-exercise">
+            <label htmlFor="search">Measure 1 Exercise # </label>
+            <input
+              type="number"
+              onChange={handleMixSearchInput}
+              name="mix-m1-search"
+              value={mixMeasureSearch.m1}
+              placeholder="Measure 1 Exercise #"
+            />
+          </div>
+          <div className="controls-mix-m2-exercise">
+            <label htmlFor="search">Measure 2 Exercise # </label>
+            <input
+              type="number"
+              onChange={handleMixSearchInput}
+              name="mix-m2-search"
+              value={mixMeasureSearch.m2}
+              placeholder="Measure 2 Exercise #"
+            />
+          </div>
+          <button
+            className="controls__btn controls__btn--apply-mix"
+            type="submit"
+            onClick={handleMixSearchClick}
+          >
+            Apply
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

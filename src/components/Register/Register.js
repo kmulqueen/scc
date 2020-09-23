@@ -5,6 +5,7 @@ import { registerUser } from "../../redux/actions/authActions";
 const Register = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
+    username: "",
     email: "",
     password: "",
   });
@@ -18,15 +19,23 @@ const Register = () => {
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = input;
-    dispatch(registerUser(email, password));
+    const { username, email, password } = input;
+    dispatch(registerUser(username, email, password));
     setInput({
+      username: "",
       email: "",
       password: "",
     });
   };
   return (
     <div className="container register">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={input.username}
+        onChange={handleInputChange}
+      />
       <input
         type="email"
         name="email"

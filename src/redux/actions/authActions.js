@@ -1,8 +1,8 @@
 import { REGISTER_USER, SIGN_IN, SIGN_OUT } from "../actionTypes";
 
-export const registerUser = (email, password) => ({
+export const registerUser = (username, email, password) => ({
   type: REGISTER_USER,
-  payload: { email, password },
+  payload: { username, email, password },
 });
 
 export const signIn = (email, password) => ({

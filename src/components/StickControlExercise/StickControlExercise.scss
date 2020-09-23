@@ -1,3 +1,9 @@
+.exercise-container {
+    display: grid;
+    grid-template-rows: 15rem 40rem;
+    gap: 2em;
+}
+
 .exercise {
     display: flex;
     justify-content: center;
